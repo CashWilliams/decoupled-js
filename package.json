@@ -10,7 +10,9 @@
   "scripts": {
     "start": "cd server && npm run start",
     "start-dev": "./node_modules/concurrently/src/main.js --kill-others \"cd client && npm run build-dev\" \"cd server && npm run start\"",
-    "postinstall": "cd client && npm install && cd ../server && npm install"
+    "postinstall": "cd client && npm install && cd ../server && npm install",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "",
   "engines": {
@@ -19,6 +21,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "concurrently": "^3.5.0"
-  }
+    "concurrently": "^3.5.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
